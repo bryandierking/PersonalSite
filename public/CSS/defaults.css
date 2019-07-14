@@ -1,0 +1,332 @@
+/*
+Filename: defaults.css
+Company: Touchdown Delivery, LLC
+Author: Darien Tsai
+Collaborators: none
+Date Created: 10/29/18
+Description:
+styling that all pages should have or
+have access to
+*/
+
+/*Colors, Graysacle for now*/
+:root{
+  --temp: rgb(134, 134, 134);
+
+    /*colors for container backgrounds*/
+  --bg-light: rgb(247, 247, 247);
+  --bg-dark: rgb(24, 24, 24);
+  --bg-hue: rgb(218, 218, 218);
+
+  /*colors for text*/
+  --text-light: rgb(236, 236, 236);
+  --text-dark: rgb(41, 41, 41);
+  --text-hue: rgb(136, 136, 136);
+
+  /*colors for other elements*/
+  --element-light: rgb(219, 219, 219);
+  --element-dark: rgb(51, 51, 51);
+  --element-hue: rgb(177, 177, 177); 
+
+  /*shadows*/
+  --text-header-shadow: rgba(24, 24, 24, 0.27);
+  --element-shadow: rgba(19, 19, 19, 0.548);
+  --element-shadow-light: rgba(163, 163, 163, 0.548);
+  --transparent: rgba(0, 0, 0, 0);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  outline: none;
+  z-index: 0;
+  position: relative;
+  text-align: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  color: var(--text-dark);
+}
+
+html{
+  background-color: var(--bg-light);
+}
+
+body{
+  overflow-x: hidden;
+}
+
+body.transition{
+  -webkit-animation: transition 0.3s 1 cubic-bezier(0.1, 0.7, 0.165, 1) forwards;
+          animation: transition 0.3s 1 cubic-bezier(0.1, 0.7, 0.165, 1) forwards;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  font-style: none;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar-track{
+	background-color: none;
+}
+::-webkit-scrollbar{
+  width: 7px;
+  background-color: var(--bg-light);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--element-hue);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--element-dark);
+}
+
+/*Motions*/
+@-webkit-keyframes transition{
+  to{
+    opacity: 0;
+  }
+}
+@keyframes transition{
+  to{
+    opacity: 0;
+  }
+}
+
+/*Footer styles, with media queries*/
+
+/*footer, mobile dimensions*/
+footer{
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1% 0;
+  background-color: var(--bg-dark);
+  white-space: nowrap;
+}
+
+footer div{
+  padding: 0.5% 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: var(--text-light);
+  font-size: 1em;
+}
+
+#footer-social{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#social-medias{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%
+}
+
+.social{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 4%;
+}
+
+#social-medias img{
+  width: 3.5vw;
+}
+
+#footer-links{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer-social h3{
+  display: none;
+}
+
+#footer-nav{
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#footer-nav a{
+  font-size: 0.7em;
+  padding: 1.8% 1% 2%;
+  text-align: center;
+  color: var(--text-light);
+  cursor: pointer;
+  border-bottom: 1px solid var(--element-dark);
+}
+
+#footer-meta h6{
+  text-align: center;
+  font-size: 0.43em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 2%;
+  color: var(--text-hue);
+}
+
+/*footer, tablet dimensions*/
+@media only screen and (min-width: 641px){
+#footer-nav{
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#footer-nav a{
+  font-size: 1.2em;
+  padding: 2% 2% 2%;
+}
+
+.social{
+  padding: 0 3%;
+}
+
+#social-medias img{
+  width: 2.2vw;
+}
+
+#footer-meta h6{
+  font-size: 0.65em;
+  padding-bottom: 1%;
+}
+}
+
+/*footer, pc dimensions*/
+@media only screen and (min-width: 1025px){
+footer{
+  padding: 0;
+}
+
+#footer-links{
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1.5% 0 0;
+}
+
+#footer-social{
+  width: 28%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer-social h3{
+  display: block;
+  color: var(--text-light);
+}
+
+#social-medias{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: none;
+}
+
+#social-medias img{
+  width: 2.2em;
+}
+
+#footer-nav{
+  width: 15%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
+  border-bottom: none;
+  border-right: 2px solid var(--element-dark);
+}
+
+#footer-nav a{
+  text-align: left;
+  font-size: 1.2em;
+  padding: 0.5em 1.5em;
+  border: none;
+}
+
+.f-nav-item{
+  font-size: 1.3em;
+  text-align: right;
+}
+
+#footer-nav a:hover{
+  background-color: var(--text-dark);
+}
+
+#footer-meta{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+#footer-meta h6{
+  font-size: 0.7em;
+  padding: 0
+}
+/*End of media query*/
+}
